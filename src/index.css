@@ -1,0 +1,299 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Arial", sans-serif;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 16px;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100% !important;
+  height: 100%;
+  overflow: hidden !important;
+}
+.scroll-pane-container {
+  position: relative;
+}
+main {
+  width: inherit;
+  height: inherit;
+  width: auto;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: #48424D;
+  color: #dde0e6;
+}
+svg {
+    pointer-events: none;
+    caret: transparent;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    pointer-events: none;
+}
+/*begin here*/
+/*super small device*/
+@media (min-width: 0px) {
+  #root {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  #container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+  }
+  #developedby {
+    color: #AF943D;
+    font-size: 10px;
+    margin-top: 25px;
+  }
+  #timer {
+    width: 100%;
+    height: 500px;
+    border: 3px solid #BCBCBC;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    background-color:#C6C4C7;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+  #display {
+    width: 90%;
+    height: 220px;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 55% 1fr;
+    background-color: #ECECEC;
+    border: 2px solid #BCBCBC;
+  }
+  #display_header {
+
+    color: #333A4D;
+  }
+  #display_sound {
+    position: absolute;
+    width: 50px;
+    height: 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  #display_sound > svg{
+    margin-top: 8px;
+    caret: transparent;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    pointer-events: none;
+  }
+  #timer-label {
+    margin-top: 5px;
+  }
+  .display_caption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #48424D;
+  }
+
+  .display_bs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 50px;
+    font-size: 12px;
+    color: #333A4D;
+  }
+  .display_bs > div {
+    display: inline-block;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 0px;
+    align-items: center;
+    justify-items: center;
+
+  }
+  #time-left {
+
+  }
+  #controls {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    width: 90%;
+    height: 220px;
+    margin-top: 10px;
+    position: relative;
+
+  }
+  .controlsdiv {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr;
+    height: 100%;
+    color: #F9F9F7;
+  }
+  .button_text:hover {
+    color: #333A4D;
+  }
+  .button_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: all 200ms;
+  }
+  .button_text > svg {
+    width: 40px;
+    height: 40px;
+  }
+  .control_caption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .control_caption > p {
+    caret: transparent;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    pointer-events: none;
+  }
+  #breakcontainer {
+    background-color: #C6C4C7;
+    border: 2px solid #BCBCBC;
+  }
+  #sessioncontainer {
+    background-color: #C6C4C7;
+    border: 2px solid #BCBCBC;
+  }
+  #playcontainer {
+    background-color: #C6C4C7;
+    border: 2px solid #BCBCBC;
+  }
+}
+@media (min-width: 250px) {
+  #display{
+      grid-template-rows: 1fr 55% 1fr;
+  }
+  .display_bs > div {
+    grid-template-columns: 65% 1fr;
+  }
+  .display_bs_input {
+    justify-self: flex-start;
+  }
+}
+@media (min-width: 475px) {
+  #timer {
+    width: 475px;
+    height: 400px;
+    border-radius: 10%;
+  }
+  #display {
+    height: 170px;
+  }
+  #controls {
+    height: 170px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .controlsdiv {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr repeat(2, 35%);
+    height: inherit;
+    align-items: center;
+    justify-content: center;
+  }
+}
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+
+}
+
+/*X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+
+}
+
+/*XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width: 1400px) {
+
+}
+@media (max-height: 499px) {
+  #container {
+    height: 100%;
+  }
+  #timer {
+    height: 100%;
+    border-radius: 0%;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+  #display {
+    height: 100%;
+    width: 100%;
+  }
+  #controls {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3,1fr);
+
+  }
+  .button_text > svg {
+    width: 30px;
+    height: 30px;
+  }
+  #developedby {
+    display: none;
+  }
+}
